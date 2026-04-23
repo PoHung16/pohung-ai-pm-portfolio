@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>陈柏宏 | 中国版 AI 产品经理申请作品集</title>
+  <meta name="description" content="面向北京、上海一线城市 AI 产品经理岗位的中国版 portfolio，强调大模型落地、评测体系、工作流闭环、灰度上线与商业化结果。" />
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --surface: #fffdf9;
+      --panel: #f8f4ed;
+      --ink: #171612;
+      --muted: #615a4f;
+      --line: #dad1c4;
+      --accent: #8c2f1c;
+      --accent-soft: #f6e4df;
+      --accent-2: #17624f;
+      --accent-2-soft: #e2f0ea;
+      --shadow: 0 14px 36px rgba(24, 21, 15, 0.06);
+      --content: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 242, 236, 0.86);
+      border-bottom: 1px solid rgba(218, 209, 196, 0.9);
+    }
+    .nav-inner, .content, .section-head, .section-body, .footer-note {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .brand small {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .brand strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(140,47,28,.12), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(23,98,79,.12), transparent 34%),
+        linear-gradient(180deg, #fffdf9 0%, #f8f4ed 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .content { padding-top: 34px; padding-bottom: 40px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .9fr;
+      gap: 28px;
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.76);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 16px 0 0;
+      font-size: 46px;
+      line-height: 1.06;
+      font-weight: 760;
+      max-width: 10ch;
+    }
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.35;
+      max-width: 18em;
+    }
+    .summary { margin-top: 16px; max-width: 54em; }
+    .contact {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .sidebox {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.8);
+      box-shadow: var(--shadow);
+    }
+    .sidebox h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .stat span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .section {
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .section.alt { background: var(--panel); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      padding-top: 30px;
+    }
+    .kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .section-title {
+      margin-top: 8px;
+      font-size: 31px;
+      line-height: 1.08;
+      font-weight: 760;
+    }
+    .section-note {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 60em;
+    }
+    .section-body { padding-top: 22px; padding-bottom: 34px; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    .card p { margin: 0 0 12px; }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      display: inline-flex;
+      padding: 6px 9px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+    }
+    .metric-list, .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .bullet-list li, .metric-list li { margin: 0 0 8px; }
+    .case-block {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 22px;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+    .mini {
+      border: 1px solid var(--line);
+      padding: 16px;
+      background: #fff;
+    }
+    .mini strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .footer-note {
+      padding-top: 22px;
+      padding-bottom: 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .section-head, .grid-2, .case-grid, .stats {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 38px; max-width: none; }
+      .subtitle { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <small>中国版 AI PM Portfolio</small>
+        <strong>陈柏宏</strong>
+      </div>
+      <div class="nav-links">
+        <a href="#why">为什么是我</a>
+        <a href="#proof">代表信号</a>
+        <a href="#method">工作方法</a>
+        <a href="#case1">案例一</a>
+        <a href="#case2">案例二</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="content">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">For Hiring Managers</div>
+          <h1>能把 AI 从能力做成产品的人。</h1>
+          <div class="subtitle">
+            我最强的能力，是把模糊的大模型机会，推进成可评估、可上线、可持续迭代、并能对业务结果负责的 AI 产品。
+          </div>
+          <p class="summary">
+            我的背景不是泛泛的“懂 AI”，而是做过生产级 AI / ML 系统落地，并且能把场景定义、技术取舍、评测体系、工作流设计、风险控制和商业化结果串成一条完整链路。这也是北京、上海一线城市 AI 产品经理岗位最看重的能力组合之一。更直接一点说，我不是在包装自己像 PM，而是已经在真实 AI 场景里做过 PM 最关键的一类判断。
+          </p>
+          <div class="contact">
+            <span>纽约，NY</span>
+            <span>(646) 673-0825</span>
+            <span>pohung0413@gmail.com</span>
+            <span>linkedin.com/in/pohung-chen-188013137</span>
+          </div>
+        </div>
+        <div class="sidebox">
+          <h2>适合岗位</h2>
+          <p>大模型应用产品经理、AI Agent 产品经理、AI 平台产品经理、技术产品经理（AI / LLM / 工作流）、AI 商业化产品经理。</p>
+          <div class="tag-row">
+            <span class="tag">大模型落地</span>
+            <span class="tag">评测体系</span>
+            <span class="tag">工作流闭环</span>
+            <span class="tag">灰度上线</span>
+            <span class="tag">商业化结果</span>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <strong>99%</strong>
+          <span>Hybrid LLM Brand Classification offline accuracy</span>
+        </div>
+        <div class="stat">
+          <strong>22%</strong>
+          <span>线上路径 latency reduction</span>
+        </div>
+        <div class="stat">
+          <strong>$130M</strong>
+          <span>广告商业化相关收入影响</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="section-head">
+      <div>
+        <div class="kicker">为什么是我</div>
+        <div class="section-title">不是“转 PM”，而是已经在做 AI PM 最难的判断。</div>
+      </div>
+      <div class="section-note">
+        我的真实优势不在于背了多少 AI PM 关键词，而在于已经做过 production AI 落地，并且能把这些经历讲成 hiring manager 真正在意的产品能力。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>真实生产环境经验</h3>
+          <p>在 Amazon Ads，我做过和广告商业化、AI 决策系统、模型服务化、上线监控、回退机制直接相关的工作，而不是只做实验室模型。</p>
+          <ul class="bullet-list">
+            <li>业务敏感、SLA 敏感的线上环境</li>
+            <li>效果、时延、成本、稳定性同时存在约束</li>
+            <li>需要对上线边界和风险负责</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>产品化而不是模型化</h3>
+          <p>我最强的证明不是“我训练了一个模型”，而是“我帮助团队把 AI 能力做成可上线、可评估、可消费的产品能力”。我最想让 hiring manager 感受到的一点是：我不是事后把工程经历翻译成产品语言，而是本来就在做一部分 AI PM 最难的判断。</p>
+          <ul class="bullet-list">
+            <li>场景定义与方案取舍</li>
+            <li>评测体系与质量闭环</li>
+            <li>工作流设计与跨团队落地</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="proof">
+    <div class="section-head">
+      <div>
+        <div class="kicker">代表信号</div>
+        <div class="section-title">最快看懂我能力的两个案例。</div>
+      </div>
+      <div class="section-note">
+        这两个案例共同证明的，不是单点工程能力，而是国内 AI PM 岗位最在意的那条链路：从场景到方案，从评测到上线，从能力到业务结果。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Hybrid LLM Brand Classification</h3>
+          <ul class="metric-list">
+            <li>把 LLM 想法定义成 `exact / comparable / mismatch` 的 AI 决策产品</li>
+            <li>支持采用 `offline / near-offline LLM + Redis + legacy fallback` 的 hybrid 架构</li>
+            <li>推动建立 golden dataset、schema validation、shadow audit 与线上监控</li>
+            <li>结果：<strong>99%</strong> offline accuracy，<strong>22%</strong> latency reduction，约 <strong>$130M</strong> revenue impact</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Churn Prediction System</h3>
+          <ul class="metric-list">
+            <li>把流失预测从模型问题升级成广告主生命周期预警产品</li>
+            <li>明确 `Recall-first` 逻辑，因为漏判高风险客户的业务成本更高</li>
+            <li>推动模型服务化：API contract、artifact bundle、CI/CD、dashboard</li>
+            <li>结果：Recall 从 <strong>81.8%</strong> 到 <strong>92.8%</strong>，接入从约 <strong>1 周</strong> 到 <strong>10 分钟</strong>，部署到约 <strong>15 分钟</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="section-head">
+      <div>
+        <div class="kicker">工作方法</div>
+        <div class="section-title">我怎么做 AI 产品。</div>
+      </div>
+      <div class="section-note">
+        我的方法不是“先上模型再想办法解释”，而是先定义业务问题和工作流，再决定 AI 在系统里应该扮演什么角色。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>AI PM 方法论</h3>
+          <ul class="metric-list">
+            <li>先定义业务目标、目标用户、成功指标</li>
+            <li>判断场景是否真的适合 AI</li>
+            <li>设计用户旅程、数据与上下文体系</li>
+            <li>决定模型方案、guardrail、fallback 和 human-in-the-loop</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>上线与闭环</h3>
+          <ul class="metric-list">
+            <li>建立 golden set、shadow audit、线上监控</li>
+            <li>同时看质量、时延、成本、风险、业务指标</li>
+            <li>通过灰度上线、bad case、A/B test 持续迭代</li>
+            <li>把模型输出变成可被业务稳定消费的产品能力</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="case1">
+    <div class="section-head">
+      <div>
+        <div class="kicker">旗舰案例</div>
+        <div class="section-title">Hybrid LLM Brand Classification</div>
+      </div>
+      <div class="section-note">
+        一个广告商业化场景里的生产级 AI decisioning 产品。难点不是“模型能不能做”，而是“在 SLA 敏感的线上环境里，什么方案能真正上线并产生收益”。 
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="case-grid">
+        <div class="mini">
+          <strong>业务问题</strong>
+          <p>query-brand 关系判断会直接影响广告相关性、CTR 和收入。真正的挑战是如何在高要求线上环境里提升语义判断，而不放大系统风险。</p>
+        </div>
+        <div class="mini">
+          <strong>我的核心贡献</strong>
+          <p>我把项目定义成 AI 决策产品，推动明确输出边界、方案取舍、指标体系和上线标准，而不是把它做成开放式 LLM demo。这里最能体现我的地方，不是技术实现本身，而是我能把模糊机会收敛成可上线的产品判断。</p>
+        </div>
+        <div class="mini">
+          <strong>方案判断</strong>
+          <p>支持采用 `offline / near-offline LLM + Redis + legacy fallback`，用混合架构兼顾效果、时延、成本和可靠性。</p>
+        </div>
+        <div class="mini">
+          <strong>评测与上线</strong>
+          <p>50,000 query golden dataset、schema validation、hallucination check、1% shadow audit，以及 latency、fallback、cache hit 等线上指标监控。</p>
+        </div>
+      </div>
+      <div class="case-block">
+        <div class="grid-2">
+          <div class="card">
+            <h3>结果</h3>
+            <ul class="metric-list">
+              <li><strong>99%</strong> offline accuracy</li>
+              <li><strong>22%</strong> latency reduction</li>
+              <li>约 <strong>$130M</strong> revenue impact</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>体现的 AI PM 能力</h3>
+            <ul class="metric-list">
+              <li>大模型适用性判断</li>
+              <li>技术方案取舍</li>
+              <li>评测体系设计</li>
+              <li>上线风险控制与商业化结果导向</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="case2">
+    <div class="section-head">
+      <div>
+        <div class="kicker">旗舰案例</div>
+        <div class="section-title">Churn Prediction System</div>
+      </div>
+      <div class="section-note">
+        一个 AI 驱动的广告主生命周期预警产品。核心价值不是预测本身，而是让运营和客户成功团队能更早、更稳定地采取动作。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="case-grid">
+        <div class="mini">
+          <strong>业务问题</strong>
+          <p>SMB 广告主流失前会出现行为变化，但如果团队识别太晚，就会失去干预机会，影响长期 LTV。</p>
+        </div>
+        <div class="mini">
+          <strong>我的核心贡献</strong>
+          <p>我把问题从 churn model 提升成生命周期预警产品，明确目标用户、Recall-first 策略和产品化交付要求。这类指标取舍和交付边界判断，本质上就是 AI PM 的核心价值。</p>
+        </div>
+        <div class="mini">
+          <strong>产品化动作</strong>
+          <p>推动 FastAPI、artifact bundle、API contract、CI/CD、dashboard 和上线监控，让模型结果进入真实业务流程。</p>
+        </div>
+        <div class="mini">
+          <strong>PM 信号</strong>
+          <p>这个项目更能体现的是业务建模、指标取舍、模型服务化和运营闭环，而不是单纯建模能力。</p>
+        </div>
+      </div>
+      <div class="case-block">
+        <div class="grid-2">
+          <div class="card">
+            <h3>结果</h3>
+            <ul class="metric-list">
+              <li>Recall 从 <strong>81.8%</strong> 到 <strong>92.8%</strong></li>
+              <li>接入从约 <strong>1 周</strong> 到约 <strong>10 分钟</strong></li>
+              <li>部署从 <strong>days</strong> 到约 <strong>15 分钟</strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>体现的 AI PM 能力</h3>
+            <ul class="metric-list">
+              <li>业务建模与增长视角</li>
+              <li>Recall / Precision 取舍</li>
+              <li>模型服务化能力</li>
+              <li>AI 驱动运营闭环</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="delivery">
+    <div class="section-head">
+      <div>
+        <div class="kicker">落地能力</div>
+        <div class="section-title">如果进入团队，我会怎样把 AI 需求推进到上线。</div>
+      </div>
+      <div class="section-note">
+        中国大陆 AI PM 岗位通常不只看你会不会讲案例，还会看你能不能把需求、方案、评测、验收、灰度、交付和风险控制串成完整落地链路。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>PRD / 原型 / 验收思路</h3>
+          <ul class="metric-list">
+            <li><strong>需求定义：</strong>明确目标用户、核心场景、能力边界、人工介入点与非目标范围</li>
+            <li><strong>方案表达：</strong>能把模糊业务需求拆成产品流程、交互逻辑、模型链路和上下文来源</li>
+            <li><strong>验收标准：</strong>不仅写功能是否完成，也写 accuracy、latency、fallback rate、人工接管率等 AI 专项指标</li>
+            <li><strong>版本规划：</strong>优先用 MVP 验证核心价值，再决定是否扩到 Agent、多工具调用或更复杂的自动化链路</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>风险控制 / 灰度 / 交付思路</h3>
+          <ul class="metric-list">
+            <li><strong>风险控制：</strong>幻觉防控、输出边界、权限控制、人工复核点、异常回滚机制</li>
+            <li><strong>评测上线：</strong>golden set、shadow audit、bad case 分类、线上监控和灰度发布</li>
+            <li><strong>跨团队协同：</strong>能和算法、工程、测试、运营、销售或实施团队对齐目标与优先级</li>
+            <li><strong>交付闭环：</strong>把客户反馈、标注修正、模型优化和产品迭代串起来，形成持续进化机制</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    我的简历告诉你我做过什么。这份作品集想证明的是：我已经具备 AI PM 最核心的一组能力，只是现在把这些能力用 hiring manager 更容易识别的方式讲清楚。换句话说，我最强的地方不是懂几个 AI 术语，而是能在模糊条件下做出正确的产品判断，并把团队推进到可上线的状态。
+  </div>
+</body>
+</html>
