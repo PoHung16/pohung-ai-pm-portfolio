@@ -375,18 +375,18 @@
         <div class="card">
           <h3>Hybrid LLM Brand Classification</h3>
           <ul class="metric-list">
-            <li>把 LLM 想法定义成 `exact / comparable / mismatch` 的 AI 决策产品</li>
-            <li>支持采用 `offline / near-offline LLM + Redis + legacy fallback` 的 hybrid 架构</li>
-            <li>推动建立 golden dataset、schema validation、shadow audit 与线上监控</li>
+            <li>将 LLM 推理能力转化为可进入广告决策链路的生产级 AI 产品，而不是停留在单点模型能力</li>
+            <li>通过结构化上下文、受限输出、Redis-backed serving 与 fallback 机制，完成从模型能力到系统能力的产品化设计</li>
+            <li>将评测、审计与线上监控前置为发布门槛，使输出可评测、可审计、可回退</li>
             <li>结果：<strong>99%</strong> offline accuracy，<strong>22%</strong> latency reduction，约 <strong>$130M</strong> revenue impact</li>
           </ul>
         </div>
         <div class="card">
           <h3>Churn Prediction System</h3>
           <ul class="metric-list">
-            <li>把流失预测从模型问题升级成广告主生命周期预警产品</li>
-            <li>明确 `Recall-first` 逻辑，因为漏判高风险客户的业务成本更高</li>
-            <li>推动模型服务化：API contract、artifact bundle、CI/CD、dashboard</li>
+            <li>将 churn modeling 重新定义为生命周期预警产品，目标不是预测分数，而是驱动运营与客户成功动作</li>
+            <li>以业务损失函数而非单纯模型表现来定义 Recall-first 指标逻辑</li>
+            <li>通过服务化交付、统一接口与可观测机制，让风险信号能够被下游系统和业务团队稳定消费</li>
             <li>结果：Recall 从 <strong>81.8%</strong> 到 <strong>92.8%</strong>，接入从约 <strong>1 周</strong> 到 <strong>10 分钟</strong>，部署到约 <strong>15 分钟</strong></li>
           </ul>
         </div>
@@ -435,7 +435,7 @@
         <div class="section-title">Hybrid LLM Brand Classification</div>
       </div>
       <div class="section-note">
-        这不是一个单纯的 LLM 分类项目，而是一个将模型推理、结构化上下文、缓存 serving、fallback 机制与下游决策链路整合在一起的生产级 AI 决策产品。真正的挑战不是“能不能用 LLM”，而是在严格 SLA、成本与可用性约束下，让模型能力进入真实业务流程。
+        这个案例要证明的，不是“LLM 可以做分类”，而是 AI 产品经理如何把模型能力重构为可上线的系统能力：用结构化上下文提升判断质量，用受限输出保证可消费性，用缓存 serving 与 fallback 机制保护实时链路，再用评测与监控体系把模型输出纳入真实业务治理。
       </div>
     </div>
     <div class="section-body">
@@ -488,7 +488,7 @@
         <div class="section-title">Churn Prediction System</div>
       </div>
       <div class="section-note">
-        这不是一个停留在分析层的 churn model 项目，而是一个面向运营与客户成功团队的生命周期预警产品。产品价值不在于预测分数本身，而在于风险信号能否被下游稳定接入，并真正转化为优先级排序、人工干预与客户经营动作。
+        这个案例要证明的，不是“模型能预测流失”，而是产品经理如何把预测能力变成组织动作：谁来消费信号、什么情况下触发干预、为什么用 Recall-first、以及如何通过服务化交付让下游团队真正把风险识别转化为经营动作。
       </div>
     </div>
     <div class="section-body">
