@@ -333,7 +333,7 @@
         <div class="section-title">核心优势。</div>
       </div>
       <div class="section-note">
-        我长期关注的核心问题，是如何将 AI 能力从技术可行性推进到产品可用性，再进一步沉淀为业务可持续消费的系统能力。
+        真正稀缺的能力，不是理解模型本身，而是能在业务目标、技术边界与上线风险同时存在约束时，持续做出正确的产品判断。
       </div>
     </div>
     <div class="section-body">
@@ -367,7 +367,7 @@
         <div class="section-title">两个最能体现 AI 产品判断与落地能力的案例。</div>
       </div>
       <div class="section-note">
-        这两个案例比较完整地体现了我在场景抽象、方案判断、评测设计、上线治理与结果承接上的全链路产品能力。
+        这两个案例共同证明的，不只是生产级 AI 落地经验，而是将模型能力转化为可被系统接入、可被团队消费、可被业务持续验证的产品能力。
       </div>
     </div>
     <div class="section-body">
@@ -407,7 +407,7 @@
     <div class="section-body">
       <div class="grid-2">
         <div class="card">
-          <h3>AI PM 方法论</h3>
+          <h3>从问题定义到方案设计</h3>
           <ul class="metric-list">
             <li>先定义业务目标、目标用户、成功指标</li>
             <li>判断场景是否真的适合 AI</li>
@@ -416,7 +416,7 @@
           </ul>
         </div>
         <div class="card">
-          <h3>上线与闭环</h3>
+          <h3>从上线治理到结果闭环</h3>
           <ul class="metric-list">
             <li>建立 golden set、shadow audit、线上监控</li>
             <li>同时看质量、时延、成本、风险、业务指标</li>
@@ -435,26 +435,26 @@
         <div class="section-title">Hybrid LLM Brand Classification</div>
       </div>
       <div class="section-note">
-        这是一个面向广告商业化场景的生产级 AI decisioning 产品。核心挑战不在模型能力本身，而在于如何在 SLA 与收益双重约束下，形成可上线、可运营、可持续优化的方案。
+        这不是一个单纯的 LLM 分类项目，而是一个将模型推理、结构化上下文、缓存 serving、fallback 机制与下游决策链路整合在一起的生产级 AI 决策产品。真正的挑战不是“能不能用 LLM”，而是在严格 SLA、成本与可用性约束下，让模型能力进入真实业务流程。
       </div>
     </div>
     <div class="section-body">
       <div class="case-grid">
         <div class="mini">
           <strong>业务问题</strong>
-          <p>query-brand 关系判断会直接影响广告相关性、CTR 和收入。真正的挑战是如何在高要求线上环境里提升语义判断，而不放大系统风险。</p>
+          <p>query-brand 关系判断直接影响广告相关性、CTR、排序质量与广告收入。问题不只是提升语义理解，而是如何在高并发拍卖链路里引入更强判断能力，同时不突破时延、成本与可用性边界。</p>
         </div>
         <div class="mini">
           <strong>我的核心贡献</strong>
-          <p>核心贡献不在于参与一个 LLM 项目，而在于将“能不能用 LLM”收敛为“什么样的输出值得上线”。相关工作围绕输出边界、评测标准、发布门槛与方案取舍展开，目标不是停留在开放式 Demo，而是推进为可交付、可运营、可复用的产品能力。</p>
+          <p>核心贡献不在于参与一个 LLM 项目，而在于将 LLM 推理能力从单点模型能力转化为可进入真实业务流程的产品能力。关键工作包括定义受限输出结构、设计结构化上下文组装方式、建立 Redis-backed serving 与 fallback 机制，并将评测、审计与监控前置为上线标准。</p>
         </div>
         <div class="mini">
           <strong>方案判断</strong>
-          <p>支持采用 `offline / near-offline LLM + Redis + legacy fallback`，用混合架构兼顾效果、时延、成本和可靠性。</p>
+          <p>采用 `offline / near-offline LLM + Redis + legacy fallback` 的 hybrid 方案，核心判断不是技术偏好，而是产品取舍：把昂贵推理与实时 serving 解耦，使高价值决策能够毫秒级命中，同时在 cache miss 时保留确定性 fallback，保证拍卖链路稳定可用。</p>
         </div>
         <div class="mini">
           <strong>评测与上线</strong>
-          <p>50,000 query golden dataset、schema validation、hallucination check、1% shadow audit，以及 latency、fallback、cache hit 等线上指标监控。</p>
+          <p>上线策略依赖的不是单次模型表现，而是完整治理机制：50,000 query golden dataset、schema validation、hallucination check、1% shadow audit，以及 latency、fallback、cache hit、invalid output rate、label distribution 等线上监控，确保输出可评测、可审计、可回退。</p>
         </div>
       </div>
       <div class="case-block">
@@ -488,14 +488,14 @@
         <div class="section-title">Churn Prediction System</div>
       </div>
       <div class="section-note">
-        这是一个 AI 驱动的广告主生命周期预警产品。它的价值不在于输出预测结果，而在于帮助运营与客户成功团队更早识别风险，并将风险信号稳定转化为可执行动作。
+        这不是一个停留在分析层的 churn model 项目，而是一个面向运营与客户成功团队的生命周期预警产品。产品价值不在于预测分数本身，而在于风险信号能否被下游稳定接入，并真正转化为优先级排序、人工干预与客户经营动作。
       </div>
     </div>
     <div class="section-body">
       <div class="case-grid">
         <div class="mini">
           <strong>业务问题</strong>
-          <p>SMB 广告主流失前会出现行为变化，但如果团队识别太晚，就会失去干预机会，影响长期 LTV。</p>
+          <p>SMB 广告主在流失前通常会出现行为变化，但如果运营团队识别过晚，就会失去干预窗口，直接影响客户经营效率与长期 LTV。问题的关键不只是“能不能预测”，而是“预测结果能否足够早、足够稳定地进入下游动作”。</p>
         </div>
         <div class="mini">
           <strong>我的核心贡献</strong>
@@ -503,11 +503,11 @@
         </div>
         <div class="mini">
           <strong>产品化动作</strong>
-          <p>推动 FastAPI、artifact bundle、API contract、CI/CD、dashboard 和上线监控，让模型结果进入真实业务流程。</p>
+          <p>通过 FastAPI、artifact bundle、API contract、CI/CD、dashboard 与上线监控，把模型能力从一次性交付转成稳定服务，让运营、客户成功与下游业务系统能够在统一接口和可观测机制下消费风险信号。</p>
         </div>
         <div class="mini">
           <strong>PM 信号</strong>
-          <p>这个项目体现了我在业务建模、指标取舍、模型服务化和运营闭环上的综合判断，而不是单一的建模能力。</p>
+          <p>这个项目体现的不是单一建模能力，而是业务损失函数驱动的产品指标设计、下游消费动作设计、服务化交付与组织闭环能力，也就是“把预测变成动作”的产品 owner 能力。</p>
         </div>
       </div>
       <div class="case-block">
@@ -529,6 +529,40 @@
               <li>AI 驱动运营闭环</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="artifacts">
+    <div class="section-head">
+      <div>
+        <div class="kicker">产品化标准</div>
+        <div class="section-title">我如何判断 AI 是否真的可以上线。</div>
+      </div>
+      <div class="section-note">
+        在大多数团队里，真正拉开差距的不是“有没有接入模型”，而是有没有把上线门槛、消费方式和回退机制定义清楚。下面这套标准，是我判断 AI 产品能否进入真实业务流程的基本框架。
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="card">
+          <h3>输出必须可被消费</h3>
+          <ul class="metric-list">
+            <li>输出必须有明确边界，适合下游系统或业务角色直接消费</li>
+            <li>低置信度、异常结果与不可解释输出必须有 fallback 或人工接管路径</li>
+            <li>AI 能力的价值不在单次回答，而在能否稳定进入真实 workflow</li>
+            <li>模型输出要服务于排序、筛选、预警、推荐或动作触发，而不是停留在展示层</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>上线必须可被治理</h3>
+          <ul class="metric-list">
+            <li>上线前要有明确的 golden set、评测标准和 bad case taxonomy</li>
+            <li>上线中要能监控质量、时延、成本、fallback rate 与异常分布</li>
+            <li>上线后要能通过 shadow audit、抽样复核和版本管理持续迭代</li>
+            <li>真正可上线的 AI 产品，必须是可评测、可审计、可回退、可复用的系统能力</li>
+          </ul>
         </div>
       </div>
     </div>
